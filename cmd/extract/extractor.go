@@ -1,4 +1,4 @@
-package extract
+package main
 
 import (
 	"fmt"
@@ -73,7 +73,8 @@ func (ex *extractor) Extract(sourced string, clean bool) error {
 					return false
 				} else {
 					if fun, ok := callexp.Fun.(*ast.SelectorExpr); ok {
-						if pack, ok := fun.X.(*ast.Ident); (fun.Sel.Name == "Trans" || fun.Sel.Name == "Transf") && ok {
+						// if pack, ok := fun.X.(*ast.Ident); (fun.Sel.Name == "Trans" || fun.Sel.Name == "Transf") && ok {
+						if _, ok := fun.X.(*ast.Ident); (fun.Sel.Name == "Trans" || fun.Sel.Name == "Transf") && ok {
 							fpath := i18n.GetNamespace(path.Dir(fname), sourced, ex.opts.GetSplitter())
 							if len(callexp.Args) == 0 {
 								ex.log.Error("Missing translation data")
@@ -89,9 +90,9 @@ func (ex *extractor) Extract(sourced string, clean bool) error {
 							} else {
 								ex.writer.Append("index", strings.Trim(key.Value, "\""))
 							}
-							fmt.Println("------Package name------")
-							fmt.Println(pack.Name, fun.Sel.Name, fname, fpath, strings.Trim(key.Value, "\""))
-							fmt.Println("------Package name------")
+							// fmt.Println("------Package name------")
+							// fmt.Println(pack.Name, fun.Sel.Name, fname, fpath, strings.Trim(key.Value, "\""))
+							// fmt.Println("------Package name------")
 						}
 					}
 				}

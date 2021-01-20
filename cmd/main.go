@@ -2,8 +2,9 @@ package main
 
 import (
 	"flag"
-	"go-i18n"
-	"go-i18n/cmd/extract"
+
+	"github.com/yaou-li/go-i18n"
+	"github.com/yaou-li/go-i18n/cmd/extract"
 )
 
 var (

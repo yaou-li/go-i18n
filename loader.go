@@ -1,12 +1,12 @@
 package i18n
 
 import (
-	"go-i18n/language"
 	"fmt"
 	"strings"
 	"sync"
 
 	"github.com/sirupsen/logrus"
+	"github.com/yaou-li/go-i18n/language"
 )
 
 type loader struct {

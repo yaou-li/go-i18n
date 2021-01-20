@@ -2,7 +2,6 @@ package i18n
 
 import (
 	"fmt"
-	"go-i18n/language"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -10,6 +9,7 @@ import (
 	"sync"
 
 	"github.com/sirupsen/logrus"
+	"github.com/yaou-li/go-i18n/language"
 )
 
 var once sync.Once

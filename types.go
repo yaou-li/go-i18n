@@ -1,6 +1,6 @@
 package i18n
 
-import "go-i18n/language"
+import "github.com/yaou-li/go-i18n/language"
 
 type I18nOptsInterface interface {
 	SetEnableLangs(shortcuts string)

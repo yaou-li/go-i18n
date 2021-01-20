@@ -2,7 +2,6 @@ package extract
 
 import (
 	"fmt"
-	"go-i18n"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -11,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/sirupsen/logrus"
+	"github.com/yaou-li/go-i18n"
 )
 
 type I18nExtractor interface {

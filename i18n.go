@@ -186,3 +186,7 @@ func Transf(key string, a ...interface{}) string {
 		return fmt.Sprintf(i18nSingleton.trans(key), a...)
 	}
 }
+
+func UpdateLang(shortcut string) {
+	i18nSingleton.UpdateLang(shortcut)
+}

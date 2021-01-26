@@ -55,14 +55,14 @@ func (opts *I18nOpts) SetEnableLangs(shortcuts string) {
 
 func (opts *I18nOpts) SetTargetLang(shortcut string) {
 	if !language.IsSupported(shortcut) {
-		panic(fmt.Sprintf("target language: %v is not supporte", shortcut))
+		panic(fmt.Sprintf("target language: %v is not supported", shortcut))
 	}
 	opts.target = language.GetLang(shortcut)
 }
 
 func (opts *I18nOpts) SetSrcLang(shortcut string) {
 	if !language.IsSupported(shortcut) {
-		panic(fmt.Sprintf("target language: %v is not supporte", shortcut))
+		panic(fmt.Sprintf("target language: %v is not supported", shortcut))
 	}
 	opts.src = language.GetLang(shortcut)
 }
@@ -189,4 +189,8 @@ func Transf(key string, a ...interface{}) string {
 
 func UpdateLang(shortcut string) {
 	i18nSingleton.UpdateLang(shortcut)
+}
+
+func GetLang() string {
+	return i18nSingleton.opts.target.Shortcut()
 }
